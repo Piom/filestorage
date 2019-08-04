@@ -1,8 +1,13 @@
 package ru.piom.filestorage;
 
-public interface FileStorageService {
-    void add(String fileName, byte[] data);
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-    void delete(String fileName);
+public interface FileStorageService {
+    void add(String fileName, byte[] data) throws IOException;
+
+    void delete(String fileName) throws FileNotFoundException;
+
+    int size();
 
 }
